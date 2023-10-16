@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct Play_With_EmojisApp: App {
+    @StateObject private var data = EmojiList()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+                    .navigationTitle("My Emotes")
+            }.environmentObject(data)
         }
     }
 }
